@@ -1,0 +1,920 @@
+id,title,journal-ref,abstract,categories,update_date,authors_parsed,cs_categories
+2502.01364,Meursault as a Data Point,,"  In an era dominated by datafication, the reduction of human experiences to
+quantifiable metrics raises profound philosophical and ethical questions. This
+paper explores these issues through the lens of Meursault, the protagonist of
+Albert Camus' The Stranger, whose emotionally detached existence epitomizes the
+existential concept of absurdity. Using natural language processing (NLP)
+techniques including emotion detection (BERT), sentiment analysis (VADER), and
+named entity recognition (spaCy)-this study quantifies key events and behaviors
+in Meursault's life. Our analysis reveals the inherent limitations of applying
+algorithmic models to complex human experiences, particularly those rooted in
+existential alienation and moral ambiguity. By examining how modern AI tools
+misinterpret Meursault's actions and emotions, this research underscores the
+broader ethical dilemmas of reducing nuanced human narratives to data points,
+challenging the foundational assumptions of our data-driven society. The
+findings presented in this paper serve as a critique of the increasing reliance
+on data-driven narratives and advocate for incorporating humanistic values in
+artificial intelligence.
+",cs.CY cs.AI cs.CL cs.DL cs.LG,2025-02-04,"[['Pratap', 'Abhinav', ''], ['Pathak', 'Amit', '']]",cs.CY cs.AI cs.CL cs.DL cs.LG
+2402.15993,"Model Compression Method for S4 with Diagonal State Space Layers using
+  Balanced Truncation",,"  To implement deep learning models on edge devices, model compression methods
+have been widely recognized as useful. However, it remains unclear which model
+compression methods are effective for Structured State Space Sequence (S4)
+models incorporating Diagonal State Space (DSS) layers, tailored for processing
+long-sequence data. In this paper, we propose to use the balanced truncation, a
+prevalent model reduction technique in control theory, applied specifically to
+DSS layers in pre-trained S4 model as a novel model compression method.
+Moreover, we propose using the reduced model parameters obtained by the
+balanced truncation as initial parameters of S4 models with DSS layers during
+the main training process. Numerical experiments demonstrate that our trained
+models combined with the balanced truncation surpass conventionally trained
+models with Skew-HiPPO initialization in accuracy, even with fewer parameters.
+Furthermore, our observations reveal a positive correlation: higher accuracy in
+the original model consistently leads to increased accuracy in models trained
+using our model compression method, suggesting that our approach effectively
+leverages the strengths of the original model.
+",cs.LG,2024-07-02,"[['Ezoe', 'Haruka', ''], ['Sato', 'Kazuhiro', '']]",cs.LG
+2103.06799,"Towards Continual Learning for Multilingual Machine Translation via
+  Vocabulary Substitution",,"  We propose a straightforward vocabulary adaptation scheme to extend the
+language capacity of multilingual machine translation models, paving the way
+towards efficient continual learning for multilingual machine translation. Our
+approach is suitable for large-scale datasets, applies to distant languages
+with unseen scripts, incurs only minor degradation on the translation
+performance for the original language pairs and provides competitive
+performance even in the case where we only possess monolingual data for the new
+languages.
+",cs.CL,2021-03-12,"[['Garcia', 'Xavier', ''], ['Constant', 'Noah', ''], ['Parikh', 'Ankur P.', ''], ['Firat', 'Orhan', '']]",cs.CL
+2308.14409,"Steerable Conditional Diffusion for Out-of-Distribution Adaptation in
+  Medical Image Reconstruction",,"  Denoising diffusion models have emerged as the go-to generative framework for
+solving inverse problems in imaging. A critical concern regarding these models
+is their performance on out-of-distribution tasks, which remains an
+under-explored challenge. Using a diffusion model on an out-of-distribution
+dataset, realistic reconstructions can be generated, but with hallucinating
+image features that are uniquely present in the training dataset. To address
+this discrepancy during train-test time and improve reconstruction accuracy, we
+introduce a novel sampling framework called Steerable Conditional Diffusion.
+Specifically, this framework adapts the diffusion model, concurrently with
+image reconstruction, based solely on the information provided by the available
+measurement. Utilising our proposed method, we achieve substantial enhancements
+in out-of-distribution performance across diverse imaging modalities, advancing
+the robust deployment of denoising diffusion models in real-world applications.
+",cs.CV cs.LG,2025-01-29,"[['Barbano', 'Riccardo', ''], ['Denker', 'Alexander', ''], ['Chung', 'Hyungjin', ''], ['Roh', 'Tae Hoon', ''], ['Arridge', 'Simon', ''], ['Maass', 'Peter', ''], ['Jin', 'Bangti', ''], ['Ye', 'Jong Chul', '']]",cs.CV cs.LG
+2407.11987,SlicerChat: Building a Local Chatbot for 3D Slicer,,"  3D Slicer is a powerful platform for 3D data visualization and analysis, but
+has a significant learning curve for new users. Generative AI applications,
+such as ChatGPT, have emerged as a potential method of bridging the gap between
+various sources of documentation using natural language. The limited exposure
+of LLM services to 3D Slicer documentation, however, means that ChatGPT and
+related services tend to suffer from significant hallucination. The objective
+of this project is to build a chatbot architecture, called SlicerChat, that is
+optimized to answer 3D Slicer related questions and able to run locally using
+an open-source model. The core research questions explored in this work revolve
+around the answer quality and speed differences due to fine-tuning, model size,
+and the type of domain knowledge included in the prompt. A prototype SlicerChat
+system was built as a custom extension in 3D Slicer based on the Code-Llama
+Instruct architecture. Models of size 1.1B, 7B and 13B were fine-tuned using
+Low rank Adaptation, and various sources of 3D Slicer documentation were
+compiled for use in a Retrieval Augmented Generation paradigm. Testing
+combinations of fine-tuning and model sizes on a benchmark dataset of five 3D
+Slicer questions revealed that fine-tuning had no impact on model performance
+or speed compared to the base architecture, and that larger models performed
+better with a significant speed decrease. Experiments with adding 3D Slicer
+documentation to the prompt showed that Python sample code and Markdown
+documentation were the most useful information to include, but that adding 3D
+Slicer scene data and questions taken from Discourse also improved model
+performance. In conclusion, this project shows the potential for integrating a
+high quality, local chatbot directly into 3D Slicer to help new users and
+experienced developers alike to more efficiently use the software.
+",cs.HC cs.AI,2024-07-18,"[['Barr', 'Colton', '']]",cs.HC cs.AI
+2302.14101,Robust Field-level Likelihood-free Inference with Galaxies,"Volume 952, Number 1, Year 2023, Pages 69","  We train graph neural networks to perform field-level likelihood-free
+inference using galaxy catalogs from state-of-the-art hydrodynamic simulations
+of the CAMELS project. Our models are rotational, translational, and
+permutation invariant and do not impose any cut on scale. From galaxy catalogs
+that only contain $3$D positions and radial velocities of $\sim 1, 000$
+galaxies in tiny $(25~h^{-1}{\rm Mpc})^3$ volumes our models can infer the
+value of $\Omega_{\rm m}$ with approximately $12$ % precision. More
+importantly, by testing the models on galaxy catalogs from thousands of
+hydrodynamic simulations, each having a different efficiency of supernova and
+AGN feedback, run with five different codes and subgrid models - IllustrisTNG,
+SIMBA, Astrid, Magneticum, SWIFT-EAGLE -, we find that our models are robust to
+changes in astrophysics, subgrid physics, and subhalo/galaxy finder.
+Furthermore, we test our models on $1,024$ simulations that cover a vast region
+in parameter space - variations in $5$ cosmological and $23$ astrophysical
+parameters - finding that the model extrapolates really well. Our results
+indicate that the key to building a robust model is the use of both galaxy
+positions and velocities, suggesting that the network have likely learned an
+underlying physical relation that does not depend on galaxy formation and is
+valid on scales larger than $\sim10~h^{-1}{\rm kpc}$.
+",astro-ph.CO astro-ph.GA cs.LG,2023-07-20,"[['de Santi', 'Natalí S. M.', ''], ['Shao', 'Helen', ''], ['Villaescusa-Navarro', 'Francisco', ''], ['Abramo', 'L. Raul', ''], ['Teyssier', 'Romain', ''], ['Villanueva-Domingo', 'Pablo', ''], ['Ni', 'Yueying', ''], ['Anglés-Alcázar', 'Daniel', ''], ['Genel', 'Shy', ''], ['Hernandez-Martinez', 'Elena', ''], ['Steinwandel', 'Ulrich P.', ''], ['Lovell', 'Christopher C.', ''], ['Dolag', 'Klaus', ''], ['Castro', 'Tiago', ''], ['Vogelsberger', 'Mark', '']]",cs.LG
+2308.06577,"A preconditioned Krylov subspace method for linear inverse problems with
+  general-form Tikhonov regularization",,"  Tikhonov regularization is a widely used technique in solving inverse
+problems that can enforce prior properties on the desired solution. In this
+paper, we propose a Krylov subspace based iterative method for solving linear
+inverse problems with general-form Tikhonov regularization term $x^TMx$, where
+$M$ is a positive semi-definite matrix. An iterative process called the
+preconditioned Golub-Kahan bidiagonalization (pGKB) is designed, which
+implicitly utilizes a proper preconditioner to generate a series of solution
+subspaces with desirable properties encoded by the regularizer $x^TMx$. Based
+on the pGKB process, we propose an iterative regularization algorithm via
+projecting the original problem onto small dimensional solution subspaces. We
+analyze regularization effect of this algorithm, including the incorporation of
+prior properties of the desired solution into the solution subspace and the
+semi-convergence behavior of regularized solution. To overcome instabilities
+caused by semi-convergence, we further propose two pGKB based hybrid
+regularization algorithms. All the proposed algorithms are tested on both
+small-scale and large-scale linear inverse problems. Numerical results
+demonstrate that these iterative algorithms exhibit excellent performance,
+outperforming other state-of-the-art algorithms in some cases.
+",math.NA cs.NA,2023-08-15,"[['Li', 'Haibo', '']]",cs.NA
+2404.04002,Continual Learning with Weight Interpolation,,"  Continual learning poses a fundamental challenge for modern machine learning
+systems, requiring models to adapt to new tasks while retaining knowledge from
+previous ones. Addressing this challenge necessitates the development of
+efficient algorithms capable of learning from data streams and accumulating
+knowledge over time. This paper proposes a novel approach to continual learning
+utilizing the weight consolidation method. Our method, a simple yet powerful
+technique, enhances robustness against catastrophic forgetting by interpolating
+between old and new model weights after each novel task, effectively merging
+two models to facilitate exploration of local minima emerging after arrival of
+new concepts. Moreover, we demonstrate that our approach can complement
+existing rehearsal-based replay approaches, improving their accuracy and
+further mitigating the forgetting phenomenon. Additionally, our method provides
+an intuitive mechanism for controlling the stability-plasticity trade-off.
+Experimental results showcase the significant performance enhancement to
+state-of-the-art experience replay algorithms the proposed weight consolidation
+approach offers. Our algorithm can be downloaded from
+https://github.com/jedrzejkozal/weight-interpolation-cl.
+",cs.LG,2024-04-10,"[['Kozal', 'Jędrzej', ''], ['Wasilewski', 'Jan', ''], ['Krawczyk', 'Bartosz', ''], ['Woźniak', 'Michał', '']]",cs.LG
+2304.01403,"Randomly Punctured Reed-Solomon Codes Achieve the List Decoding Capacity
+  over Polynomial-Size Alphabets",,"  This paper shows that, with high probability, randomly punctured Reed-Solomon
+codes over fields of polynomial size achieve the list decoding capacity. More
+specifically, we prove that for any $\epsilon>0$ and $R\in (0,1)$, with high
+probability, randomly punctured Reed-Solomon codes of block length $n$ and rate
+$R$ are $\left(1-R-\epsilon, O({1}/{\epsilon})\right)$ list decodable over
+alphabets of size at least $2^{\mathrm{poly}(1/\epsilon)}n^2$. This extends the
+recent breakthrough of Brakensiek, Gopi, and Makam (STOC 2023) that randomly
+punctured Reed-Solomon codes over fields of exponential size attain the
+generalized Singleton bound of Shangguan and Tamo (STOC 2020).
+",cs.IT cs.DS math.CO math.IT,2023-04-10,"[['Guo', 'Zeyu', ''], ['Zhang', 'Zihan', '']]",cs.IT cs.DS
+2010.13496,Unsupervised discovery of interpretable hyperelastic constitutive laws,"Computer Methods in Applied Mechanics and Engineering, 381,
+  113852, 2021","  We propose a new approach for data-driven automated discovery of isotropic
+hyperelastic constitutive laws. The approach is unsupervised, i.e., it requires
+no stress data but only displacement and global force data, which are
+realistically available through mechanical testing and digital image
+correlation techniques; it delivers interpretable models, i.e., models that are
+embodied by parsimonious mathematical expressions discovered through sparse
+regression of a large catalogue of candidate functions; it is one-shot, i.e.,
+discovery only needs one experiment - but can use more if available. The
+problem of unsupervised discovery is solved by enforcing equilibrium
+constraints in the bulk and at the loaded boundary of the domain. Sparsity of
+the solution is achieved by l_p regularization combined with thresholding,
+which calls for a non-linear optimization scheme. The ensuing fully automated
+algorithm leverages physics-based constraints for the automatic determination
+of the penalty parameter in the regularization term. Using numerically
+generated data including artificial noise, we demonstrate the ability of the
+approach to accurately discover five hyperelastic models of different
+complexity. We also show that, if a ""true"" feature is missing in the function
+library, the proposed approach is able to surrogate it in such a way that the
+actual response is still accurately predicted.
+",cs.CE,2021-04-30,"[['Flaschel', 'Moritz', ''], ['Kumar', 'Siddhant', ''], ['De Lorenzis', 'Laura', '']]",cs.CE
+2411.06518,Causal Representation Learning from Multimodal Biological Observations,,"  Prevalent in biological applications (e.g., human phenotype measurements),
+multimodal datasets can provide valuable insights into the underlying
+biological mechanisms. However, current machine learning models designed to
+analyze such datasets still lack interpretability and theoretical guarantees,
+which are essential to biological applications. Recent advances in causal
+representation learning have shown promise in uncovering the interpretable
+latent causal variables with formal theoretical certificates. Unfortunately,
+existing works for multimodal distributions either rely on restrictive
+parametric assumptions or provide rather coarse identification results,
+limiting their applicability to biological research which favors a detailed
+understanding of the mechanisms.
+  In this work, we aim to develop flexible identification conditions for
+multimodal data and principled methods to facilitate the understanding of
+biological datasets. Theoretically, we consider a flexible nonparametric latent
+distribution (c.f., parametric assumptions in prior work) permitting causal
+relationships across potentially different modalities. We establish
+identifiability guarantees for each latent component, extending the subspace
+identification results from prior work. Our key theoretical ingredient is the
+structural sparsity of the causal connections among distinct modalities, which,
+as we will discuss, is natural for a large collection of biological systems.
+Empirically, we propose a practical framework to instantiate our theoretical
+insights. We demonstrate the effectiveness of our approach through extensive
+experiments on both numerical and synthetic datasets. Results on a real-world
+human phenotype dataset are consistent with established medical research,
+validating our theoretical and methodological framework.
+",cs.LG q-bio.QM stat.ME,2024-11-12,"[['Sun', 'Yuewen', ''], ['Kong', 'Lingjing', ''], ['Chen', 'Guangyi', ''], ['Li', 'Loka', ''], ['Luo', 'Gongxu', ''], ['Li', 'Zijian', ''], ['Zhang', 'Yixuan', ''], ['Zheng', 'Yujia', ''], ['Yang', 'Mengyue', ''], ['Stojanov', 'Petar', ''], ['Segal', 'Eran', ''], ['Xing', 'Eric P.', ''], ['Zhang', 'Kun', '']]",cs.LG
+2311.13171,"ComPEFT: Compression for Communicating Parameter Efficient Updates via
+  Sparsification and Quantization",,"  Parameter-efficient fine-tuning (PEFT) techniques make it possible to
+efficiently adapt a language model to create ""expert"" models that specialize to
+new tasks or domains. Recent techniques in model merging and compositional
+generalization leverage these expert models by dynamically composing modules to
+improve zero/few-shot generalization. Despite the efficiency of PEFT methods,
+the size of expert models can make it onerous to retrieve expert models per
+query over high-latency networks like the Internet or serve multiple experts on
+a single GPU. To address these issues, we present ComPEFT, a novel method for
+compressing fine-tuning residuals (task vectors) of PEFT based models. ComPEFT
+employs sparsification and ternary quantization to reduce the size of the PEFT
+module without performing any additional retraining while preserving or
+enhancing model performance. In extensive evaluation across T5, T0, and
+LLaMA-based models with 200M - 65B parameters, ComPEFT achieves compression
+ratios of 8x - 50x. In particular, we show that ComPEFT improves with scale -
+stronger models exhibit higher compressibility and better performance. For
+example, we show that ComPEFT applied to LLaMA outperforms QLoRA by 4.16% on
+MMLU with a storage size reduction of up to 26x. In addition, we show that the
+compressed experts produced by ComPEFT maintain few-shot compositional
+generalization capabilities, facilitate efficient communication and
+computation, and exhibit enhanced performance when merged. Lastly, we provide
+an analysis of different method components, compare it with other PEFT methods,
+and test ComPEFT's efficacy for compressing the residual of full-finetuning.
+Our code is available at https://github.com/prateeky2806/compeft.
+",cs.LG cs.AI cs.CL,2023-11-23,"[['Yadav', 'Prateek', ''], ['Choshen', 'Leshem', ''], ['Raffel', 'Colin', ''], ['Bansal', 'Mohit', '']]",cs.LG cs.AI cs.CL
+2210.11940,"JRDB-Pose: A Large-scale Dataset for Multi-Person Pose Estimation and
+  Tracking",,"  Autonomous robotic systems operating in human environments must understand
+their surroundings to make accurate and safe decisions. In crowded human scenes
+with close-up human-robot interaction and robot navigation, a deep
+understanding requires reasoning about human motion and body dynamics over time
+with human body pose estimation and tracking. However, existing datasets either
+do not provide pose annotations or include scene types unrelated to robotic
+applications. Many datasets also lack the diversity of poses and occlusions
+found in crowded human scenes. To address this limitation we introduce
+JRDB-Pose, a large-scale dataset and benchmark for multi-person pose estimation
+and tracking using videos captured from a social navigation robot. The dataset
+contains challenge scenes with crowded indoor and outdoor locations and a
+diverse range of scales and occlusion types. JRDB-Pose provides human pose
+annotations with per-keypoint occlusion labels and track IDs consistent across
+the scene. A public evaluation server is made available for fair evaluation on
+a held-out test set. JRDB-Pose is available at https://jrdb.erc.monash.edu/ .
+",cs.CV cs.RO,2023-03-14,"[['Vendrow', 'Edward', ''], ['Le', 'Duy Tho', ''], ['Cai', 'Jianfei', ''], ['Rezatofighi', 'Hamid', '']]",cs.CV cs.RO
+2107.11787,"Leveraging Auxiliary Tasks with Affinity Learning for Weakly Supervised
+  Semantic Segmentation",,"  Semantic segmentation is a challenging task in the absence of densely
+labelled data. Only relying on class activation maps (CAM) with image-level
+labels provides deficient segmentation supervision. Prior works thus consider
+pre-trained models to produce coarse saliency maps to guide the generation of
+pseudo segmentation labels. However, the commonly used off-line heuristic
+generation process cannot fully exploit the benefits of these coarse saliency
+maps. Motivated by the significant inter-task correlation, we propose a novel
+weakly supervised multi-task framework termed as AuxSegNet, to leverage
+saliency detection and multi-label image classification as auxiliary tasks to
+improve the primary task of semantic segmentation using only image-level
+ground-truth labels. Inspired by their similar structured semantics, we also
+propose to learn a cross-task global pixel-level affinity map from the saliency
+and segmentation representations. The learned cross-task affinity can be used
+to refine saliency predictions and propagate CAM maps to provide improved
+pseudo labels for both tasks. The mutual boost between pseudo label updating
+and cross-task affinity learning enables iterative improvements on segmentation
+performance. Extensive experiments demonstrate the effectiveness of the
+proposed auxiliary learning network structure and the cross-task affinity
+learning method. The proposed approach achieves state-of-the-art weakly
+supervised segmentation performance on the challenging PASCAL VOC 2012 and MS
+COCO benchmarks.
+",cs.CV,2021-07-28,"[['Xu', 'Lian', ''], ['Ouyang', 'Wanli', ''], ['Bennamoun', 'Mohammed', ''], ['Boussaid', 'Farid', ''], ['Sohel', 'Ferdous', ''], ['Xu', 'Dan', '']]",cs.CV
+2409.11382,"A lattice Boltzmann method for Biot's consolidation model of linear
+  poroelasticity",,"  Biot's consolidation model is a classical model for the evolution of
+deformable porous media saturated by a fluid and has various interdisciplinary
+applications. While numerical solution methods to solve poroelasticity by
+typical schemes such as finite differences, finite volumes or finite elements
+have been intensely studied, lattice Boltzmann methods for poroelasticity have
+not been developed yet. In this work, we propose a novel semi-implicit coupling
+of lattice Boltzmann methods to solve Biot's consolidation model in two
+dimensions. To this end, we use a single-relaxation-time lattice Boltzmann
+method for reaction-diffusion equations to solve the Darcy flow and combine it
+with a recent pseudo-time multi-relaxation-time lattice Boltzmann scheme for
+quasi-static linear elasticity by Boolakee, Geier and De Lorenzis (2023, DOI:
+10.1016/j.cma.2022.115756). The numerical results demonstrate that naive
+coupling schemes lead to instabilities when the poroelastic system is strongly
+coupled. However, the newly developed centered coupling scheme using fully
+explicit and semi-implicit contributions is stable and accurate in all
+considered cases, even for the Biot--Willis coefficient being one. Furthermore,
+the numerical results for Terzaghi's consolidation problem and a
+two-dimensional extension thereof highlight that the scheme is even able to
+capture discontinuous solutions arising from instantaneous loading.
+",math.NA cs.NA physics.flu-dyn,2024-09-18,"[['Lunowa', 'Stephan B.', ''], ['Wohlmuth', 'Barbara', '']]",cs.NA
+2307.06283,Tackling Computational Heterogeneity in FL: A Few Theoretical Insights,,"  The future of machine learning lies in moving data collection along with
+training to the edge. Federated Learning, for short FL, has been recently
+proposed to achieve this goal. The principle of this approach is to aggregate
+models learned over a large number of distributed clients, i.e.,
+resource-constrained mobile devices that collect data from their environment,
+to obtain a new more general model. The latter is subsequently redistributed to
+clients for further training. A key feature that distinguishes federated
+learning from data-center-based distributed training is the inherent
+heterogeneity. In this work, we introduce and analyse a novel aggregation
+framework that allows for formalizing and tackling computational heterogeneity
+in federated optimization, in terms of both heterogeneous data and local
+updates. Proposed aggregation algorithms are extensively analyzed from a
+theoretical, and an experimental prospective.
+",cs.LG cs.DC,2023-07-13,"[['Mansour', 'Adnan Ben', ''], ['Carenini', 'Gaia', ''], ['Duplessis', 'Alexandre', '']]",cs.LG cs.DC
+2412.10953,Optimizing AI-Assisted Code Generation,,"  In recent years, the rise of AI-assisted code-generation tools has
+significantly transformed software development. While code generators have
+mainly been used to support conventional software development, their use will
+be extended to powerful and secure AI systems. Systems capable of generating
+code, such as ChatGPT, OpenAI Codex, GitHub Copilot, and AlphaCode, take
+advantage of advances in machine learning (ML) and natural language processing
+(NLP) enabled by large language models (LLMs). However, it must be borne in
+mind that these models work probabilistically, which means that although they
+can generate complex code from natural language input, there is no guarantee
+for the functionality and security of the generated code.
+  However, to fully exploit the considerable potential of this technology, the
+security, reliability, functionality, and quality of the generated code must be
+guaranteed. This paper examines the implementation of these goals to date and
+explores strategies to optimize them. In addition, we explore how these systems
+can be optimized to create safe, high-performance, and executable artificial
+intelligence (AI) models, and consider how to improve their accessibility to
+make AI development more inclusive and equitable.
+",cs.SE cs.AI cs.LG,2024-12-17,"[['Torka', 'Simon', ''], ['Albayrak', 'Sahin', '']]",cs.SE cs.AI cs.LG
+2102.11491,Data Driven Testing of Cyber Physical Systems,,"  Consumer grade cyber-physical systems (CPS) are becoming an integral part of
+our life, automatizing and simplifying everyday tasks. Indeed, due to complex
+interactions between hardware, networking and software, developing and testing
+such systems is known to be a challenging task. Various quality assurance and
+testing strategies have been proposed. The most common approach for
+pre-deployment testing is to model the system and run simulations with models
+or software in the loop. In practice, most often, tests are run for a small
+number of simulations, which are selected based on the engineers' domain
+knowledge and experience. In this paper we propose an approach to automatically
+generate fault-revealing test cases for CPS. We have implemented our approach
+in Python, using standard frameworks and used it to generate scenarios
+violating temperature constraints for a smart thermostat implemented as a part
+of our IoT testbed. Data collected from an application managing a smart
+building have been used to learn models of the environment under ever changing
+conditions. The suggested approach allowed us to identify several pit-fails,
+scenarios (i.e., environment conditions and inputs), where the system behaves
+not as expected.
+",cs.CR cs.NE,2021-03-24,"[['Humeniuk', 'Dmytro', ''], ['Antoniol', 'Giuliano', ''], ['Khomh', 'Foutse', '']]",cs.CR cs.NE
+2111.02296,On polynomially many queries to NP or QMA oracles,"Proceedings of 13th Innovations in Theoretical Computer Science
+  Conference (ITCS 2022), 75:1--75:27, 2022","  We study the complexity of problems solvable in deterministic polynomial time
+with access to an NP or Quantum Merlin-Arthur (QMA)-oracle, such as $P^{NP}$
+and $P^{QMA}$, respectively. The former allows one to classify problems more
+finely than the Polynomial-Time Hierarchy (PH), whereas the latter
+characterizes physically motivated problems such as Approximate Simulation
+(APX-SIM) [Ambainis, CCC 2014]. In this area, a central role has been played by
+the classes $P^{NP[\log]}$ and $P^{QMA[\log]}$, defined identically to $P^{NP}$
+and $P^{QMA}$, except that only logarithmically many oracle queries are
+allowed. Here, [Gottlob, FOCS 1993] showed that if the adaptive queries made by
+a $P^{NP}$ machine have a ""query graph"" which is a tree, then this computation
+can be simulated in $P^{NP[\log]}$.
+  In this work, we first show that for any verification class
+$C\in\{NP,MA,QCMA,QMA,QMA(2),NEXP,QMA_{\exp}\}$, any $P^C$ machine with a query
+graph of ""separator number"" $s$ can be simulated using deterministic time
+$\exp(s\log n)$ and $s\log n$ queries to a $C$-oracle. When $s\in O(1)$ (which
+includes the case of $O(1)$-treewidth, and thus also of trees), this gives an
+upper bound of $P^{C[\log]}$, and when $s\in O(\log^k(n))$, this yields bound
+$QP^{C[\log^{k+1}]}$ (QP meaning quasi-polynomial time). We next show how to
+combine Gottlob's ""admissible-weighting function"" framework with the
+""flag-qubit"" framework of [Watson, Bausch, Gharibian, 2020], obtaining a
+unified approach for embedding $P^C$ computations directly into APX-SIM
+instances in a black-box fashion. Finally, we formalize a simple no-go
+statement about polynomials (c.f. [Krentel, STOC 1986]): Given a multi-linear
+polynomial $p$ specified via an arithmetic circuit, if one can ""weakly
+compress"" $p$ so that its optimal value requires $m$ bits to represent, then
+$P^{NP}$ can be decided with only $m$ queries to an NP-oracle.
+",cs.CC quant-ph,2022-10-18,"[['Gharibian', 'Sevag', ''], ['Rudolph', 'Dorian', '']]",cs.CC
+2409.02128,"The Application of Artificial Neural Network Model to Predicting the
+  Acid Mine Drainage from Long-Term Lab Scale Kinetic Test",E3S Web of Conf. 485(2024),"  Acid mine drainage (AMD) is one of the common environmental problems in the
+coal mining industry that was formed by the oxidation of sulfide minerals in
+the overburden or waste rock. The prediction of acid generation through AMD is
+important to do in overburden management and planning the post-mining land use.
+One of the methods used to predict AMD is a lab-scale kinetic test to determine
+the rate of acid formation over time using representative samples in the field.
+However, this test requires a long-time procedure and large amount of chemical
+reagents lead to inefficient cost. On the other hand, there is potential for
+machine learning to learn the pattern behind the lab-scale kinetic test data.
+This study describes an approach to use artificial neural network (ANN)
+modeling to predict the result from lab-scale kinetic tests. Various ANN model
+is used based on 83 weeks experiments of lab-scale kinetic tests with 100\%
+potential acid-forming rock. The model approaches the monitoring of pH, ORP,
+conductivity, TDS, sulfate, and heavy metals (Fe and Mn). The overall
+Nash-Sutcliffe Efficiency (NSE) obtained in this study was 0.99 on training and
+validation data, indicating a strong correlation and accurate prediction
+compared to the actual lab-scale kinetic tests data. This show the ANN ability
+to learn patterns, trends, and seasonality from past data for accurate
+forecasting, thereby highlighting its significant contribution to solving AMD
+problems. This research is also expected to establish the foundation for a new
+approach to predict AMD, with time efficient, accurate, and cost-effectiveness
+in future applications.
+",cs.LG cs.AI,2024-09-05,"[['Abfertiawan', 'Muhammad Sonny', ''], ['Kautsar', 'Muchammad Daniyal', ''], ['Hasan', 'Faiz', ''], ['Palinggi', 'Yoseph', ''], ['Pranoto', 'Kris', '']]",cs.LG cs.AI
+2206.13737,"Adversarial Consistency for Single Domain Generalization in Medical
+  Image Segmentation",,"  An organ segmentation method that can generalize to unseen contrasts and
+scanner settings can significantly reduce the need for retraining of deep
+learning models. Domain Generalization (DG) aims to achieve this goal. However,
+most DG methods for segmentation require training data from multiple domains
+during training. We propose a novel adversarial domain generalization method
+for organ segmentation trained on data from a \emph{single} domain. We
+synthesize the new domains via learning an adversarial domain synthesizer (ADS)
+and presume that the synthetic domains cover a large enough area of plausible
+distributions so that unseen domains can be interpolated from synthetic
+domains. We propose a mutual information regularizer to enforce the semantic
+consistency between images from the synthetic domains, which can be estimated
+by patch-level contrastive learning. We evaluate our method for various organ
+segmentation for unseen modalities, scanning protocols, and scanner sites.
+",cs.CV,2022-07-01,"[['Xu', 'Yanwu', ''], ['Xie', 'Shaoan', ''], ['Reynolds', 'Maxwell', ''], ['Ragoza', 'Matthew', ''], ['Gong', 'Mingming', ''], ['Batmanghelich', 'Kayhan', '']]",cs.CV
+1709.02877,Variable Annealing Length and Parallelism in Simulated Annealing,"Proceedings of the Tenth International Symposium on Combinatorial
+  Search (SoCS 2017), pages 2-10. AAAI Press, June 2017","  In this paper, we propose: (a) a restart schedule for an adaptive simulated
+annealer, and (b) parallel simulated annealing, with an adaptive and
+parameter-free annealing schedule. The foundation of our approach is the
+Modified Lam annealing schedule, which adaptively controls the temperature
+parameter to track a theoretically ideal rate of acceptance of neighboring
+states. A sequential implementation of Modified Lam simulated annealing is
+almost parameter-free. However, it requires prior knowledge of the annealing
+length. We eliminate this parameter using restarts, with an exponentially
+increasing schedule of annealing lengths. We then extend this restart schedule
+to parallel implementation, executing several Modified Lam simulated annealers
+in parallel, with varying initial annealing lengths, and our proposed parallel
+annealing length schedule. To validate our approach, we conduct experiments on
+an NP-Hard scheduling problem with sequence-dependent setup constraints. We
+compare our approach to fixed length restarts, both sequentially and in
+parallel. Our results show that our approach can achieve substantial
+performance gains, throughout the course of the run, demonstrating our approach
+to be an effective anytime algorithm.
+",cs.NE cs.AI cs.DC,2023-11-10,"[['Cicirello', 'Vincent A.', '']]",cs.NE cs.AI cs.DC
+2403.16387,"Text-IF: Leveraging Semantic Text Guidance for Degradation-Aware and
+  Interactive Image Fusion",,"  Image fusion aims to combine information from different source images to
+create a comprehensively representative image. Existing fusion methods are
+typically helpless in dealing with degradations in low-quality source images
+and non-interactive to multiple subjective and objective needs. To solve them,
+we introduce a novel approach that leverages semantic text guidance image
+fusion model for degradation-aware and interactive image fusion task, termed as
+Text-IF. It innovatively extends the classical image fusion to the text guided
+image fusion along with the ability to harmoniously address the degradation and
+interaction issues during fusion. Through the text semantic encoder and
+semantic interaction fusion decoder, Text-IF is accessible to the all-in-one
+infrared and visible image degradation-aware processing and the interactive
+flexible fusion outcomes. In this way, Text-IF achieves not only multi-modal
+image fusion, but also multi-modal information fusion. Extensive experiments
+prove that our proposed text guided image fusion strategy has obvious
+advantages over SOTA methods in the image fusion performance and degradation
+treatment. The code is available at https://github.com/XunpengYi/Text-IF.
+",cs.CV,2024-03-26,"[['Yi', 'Xunpeng', ''], ['Xu', 'Han', ''], ['Zhang', 'Hao', ''], ['Tang', 'Linfeng', ''], ['Ma', 'Jiayi', '']]",cs.CV
+2404.01329,"Unraveling the Dynamics of Television Debates and Social Media
+  Engagement: Insights from an Indian News Show",,"  The relationship between television shows and social media has become
+increasingly intertwined in recent years. Social media platforms, particularly
+Twitter, have emerged as significant sources of public opinion and discourse on
+topics discussed in television shows. In India, news debates leverage the
+popularity of social media to promote hashtags and engage users in discussions
+and debates on a daily basis.
+  This paper focuses on the analysis of one of India's most prominent and
+widely-watched TV news debate shows: ""Arnab Goswami-The Debate"". The study
+examines the content of the show by analyzing the hashtags used to promote it
+and the social media data corresponding to these hashtags. The findings reveal
+that the show exhibits a strong bias towards the ruling Bharatiya Janata Party
+(BJP), with over 60% of the debates featuring either pro-BJP or anti-opposition
+content. Social media support for the show primarily comes from BJP supporters.
+Notably, BJP leaders and influencers play a significant role in promoting the
+show on social media, leveraging their existing networks and resources to
+artificially trend specific hashtags. Furthermore, the study uncovers a
+reciprocal flow of information between the TV show and social media. We find
+evidence that the show's choice of topics is linked to social media posts made
+by party workers, suggesting a dynamic interplay between traditional media and
+online platforms.
+  By exploring the complex interaction between television debates and social
+media support, this study contributes to a deeper understanding of the evolving
+relationship between these two domains in the digital age. The findings hold
+implications for media researchers and practitioners, offering insights into
+the ways in which social media can influence traditional media and vice versa.
+",cs.SI,2024-04-03,"[['Garimella', 'Kiran', ''], ['Datta', 'Abhilash', '']]",cs.SI
+2405.16114,"Multi-scale Quaternion CNN and BiGRU with Cross Self-attention Feature
+  Fusion for Fault Diagnosis of Bearing",,"  In recent years, deep learning has led to significant advances in bearing
+fault diagnosis (FD). Most techniques aim to achieve greater accuracy. However,
+they are sensitive to noise and lack robustness, resulting in insufficient
+domain adaptation and anti-noise ability. The comparison of studies reveals
+that giving equal attention to all features does not differentiate their
+significance. In this work, we propose a novel FD model by integrating
+multi-scale quaternion convolutional neural network (MQCNN), bidirectional
+gated recurrent unit (BiGRU), and cross self-attention feature fusion (CSAFF).
+We have developed innovative designs in two modules, namely MQCNN and CSAFF.
+Firstly, MQCNN applies quaternion convolution to multi-scale architecture for
+the first time, aiming to extract the rich hidden features of the original
+signal from multiple scales. Then, the extracted multi-scale information is
+input into CSAFF for feature fusion, where CSAFF innovatively incorporates
+cross self-attention mechanism to enhance discriminative interaction
+representation within features. Finally, BiGRU captures temporal dependencies
+while a softmax layer is employed for fault classification, achieving accurate
+FD. To assess the efficacy of our approach, we experiment on three public
+datasets (CWRU, MFPT, and Ottawa) and compare it with other excellent methods.
+The results confirm its state-of-the-art, which the average accuracies can
+achieve up to 99.99%, 100%, and 99.21% on CWRU, MFPT, and Ottawa datasets.
+Moreover, we perform practical tests and ablation experiments to validate the
+efficacy and robustness of the proposed approach. Code is available at
+https://github.com/mubai011/MQCCAF.
+",cs.AI cs.CV cs.LG,2024-05-31,"[['Liu', 'Huanbai', ''], ['Zhang', 'Fanlong', ''], ['Tan', 'Yin', ''], ['Huang', 'Lian', ''], ['Li', 'Yan', ''], ['Huang', 'Guoheng', ''], ['Luo', 'Shenghong', ''], ['Zeng', 'An', '']]",cs.AI cs.CV cs.LG
+2410.04917,"Why am I seeing this: Democratizing End User Auditing for Online Content
+  Recommendations",,"  Personalized recommendation systems tailor content based on user attributes,
+which are either provided or inferred from private data. Research suggests that
+users often hypothesize about reasons behind contents they encounter (e.g., ""I
+see this jewelry ad because I am a woman""), but they lack the means to confirm
+these hypotheses due to the opaqueness of these systems. This hinders informed
+decision-making about privacy and system use and contributes to the lack of
+algorithmic accountability. To address these challenges, we introduce a new
+interactive sandbox approach. This approach creates sets of synthetic user
+personas and corresponding personal data that embody realistic variations in
+personal attributes, allowing users to test their hypotheses by observing how a
+website's algorithms respond to these personas. We tested the sandbox in the
+context of targeted advertisement. Our user study demonstrates its usability,
+usefulness, and effectiveness in empowering end-user auditing in a case study
+of targeting ads.
+",cs.HC,2024-10-08,"[['Chen', 'Chaoran', ''], ['Li', 'Leyang', ''], ['Cao', 'Luke', ''], ['Ye', 'Yanfang', ''], ['Li', 'Tianshi', ''], ['Yao', 'Yaxing', ''], ['Li', 'Toby Jia-jun', '']]",cs.HC
+2411.13280,"Structure-Based Molecule Optimization via Gradient-Guided Bayesian
+  Update",,"  Structure-based molecule optimization (SBMO) aims to optimize molecules with
+both continuous coordinates and discrete types against protein targets. A
+promising direction is to exert gradient guidance on generative models given
+its remarkable success in images, but it is challenging to guide discrete data
+and risks inconsistencies between modalities. To this end, we leverage a
+continuous and differentiable space derived through Bayesian inference,
+presenting Molecule Joint Optimization (MolJO), the first gradient-based SBMO
+framework that facilitates joint guidance signals across different modalities
+while preserving SE(3)-equivariance. We introduce a novel backward correction
+strategy that optimizes within a sliding window of the past histories, allowing
+for a seamless trade-off between explore-and-exploit during optimization. Our
+proposed MolJO achieves state-of-the-art performance on CrossDocked2020
+benchmark (Success Rate 51.3% , Vina Dock -9.05 and SA 0.78), more than 4x
+improvement in Success Rate compared to the gradient-based counterpart, and 2x
+""Me-Better"" Ratio as much as 3D baselines. Furthermore, we extend MolJO to a
+wide range of optimization settings, including multi-objective optimization and
+challenging tasks in drug design such as R-group optimization and scaffold
+hopping, further underscoring its versatility and potential.
+",q-bio.BM cs.AI,2024-11-22,"[['Qiu', 'Keyue', ''], ['Song', 'Yuxuan', ''], ['Yu', 'Jie', ''], ['Ma', 'Hongbo', ''], ['Cao', 'Ziyao', ''], ['Zhang', 'Zhilong', ''], ['Wu', 'Yushuai', ''], ['Zheng', 'Mingyue', ''], ['Zhou', 'Hao', ''], ['Ma', 'Wei-Ying', '']]",cs.AI
+2405.09886,"MTLComb: multi-task learning combining regression and classification
+  tasks for joint feature selection",,"  Multi-task learning (MTL) is a learning paradigm that enables the
+simultaneous training of multiple communicating algorithms. Although MTL has
+been successfully applied to ether regression or classification tasks alone,
+incorporating mixed types of tasks into a unified MTL framework remains
+challenging, primarily due to variations in the magnitudes of losses associated
+with different tasks. This challenge, particularly evident in MTL applications
+with joint feature selection, often results in biased selections. To overcome
+this obstacle, we propose a provable loss weighting scheme that analytically
+determines the optimal weights for balancing regression and classification
+tasks. This scheme significantly mitigates the otherwise biased feature
+selection. Building upon this scheme, we introduce MTLComb, an MTL algorithm
+and software package encompassing optimization procedures, training protocols,
+and hyperparameter estimation procedures. MTLComb is designed for learning
+shared predictors among tasks of mixed types. To showcase the efficacy of
+MTLComb, we conduct tests on both simulated data and biomedical studies
+pertaining to sepsis and schizophrenia.
+",cs.LG cs.AI q-bio.BM,2024-05-17,"[['Cao', 'Han', ''], ['Rajan', 'Sivanesan', ''], ['Hahn', 'Bianka', ''], ['Kocak', 'Ersoy', ''], ['Durstewitz', 'Daniel', ''], ['Schwarz', 'Emanuel', ''], ['Schneider-Lindner', 'Verena', '']]",cs.LG cs.AI
+2202.12014,"TriggerCit: Early Flood Alerting using Twitter and Geolocation -- a
+  comparison with alternative sources",,"  Rapid impact assessment in the immediate aftermath of a natural disaster is
+essential to provide adequate information to international organisations, local
+authorities, and first responders. Social media can support emergency response
+with evidence-based content posted by citizens and organisations during ongoing
+events. In the paper, we propose TriggerCit: an early flood alerting tool with
+a multilanguage approach focused on timeliness and geolocation. The paper
+focuses on assessing the reliability of the approach as a triggering system,
+comparing it with alternative sources for alerts, and evaluating the quality
+and amount of complementary information gathered. Geolocated visual evidence
+extracted from Twitter by TriggerCit was analysed in two case studies on floods
+in Thailand and Nepal in 2021.
+",cs.CY,2022-03-08,"[['Bono', 'Carlo', '', '4\n  and 5'], ['Pernici', 'Barbara', '', '4\n  and 5'], ['Fernandez-Marquez', 'Jose Luis', '', '4\n  and 5'], ['Shankar', 'Amudha Ravi', '', '4\n  and 5'], ['Mülâyim', 'Mehmet Oğuz', '', '4\n  and 5'], ['Nemni', 'Edoardo', '', '4\n  and 5']]",cs.CY
+2406.10989,"Predicting the Understandability of Computational Notebooks through Code
+  Metrics Analysis",,"  Computational notebooks have become the primary coding environment for data
+scientists. However, research on their code quality is still emerging, and the
+code shared is often of poor quality. Given the importance of maintenance and
+reusability, understanding the metrics that affect notebook code
+comprehensibility is crucial. Code understandability, a qualitative variable,
+is closely tied to user opinions. Traditional approaches to measuring it either
+use limited questionnaires to review a few code pieces or rely on metadata such
+as likes and votes in software repositories. Our approach enhances the
+measurement of Jupyter notebook understandability by leveraging user comments
+related to code understandability. As a case study, we used 542,051 Kaggle
+Jupyter notebooks from our previous research, named DistilKaggle. We employed a
+fine-tuned DistilBERT transformer to identify user comments associated with
+code understandability. We established a criterion called User Opinion Code
+Understandability (UOCU), which considers the number of relevant comments,
+upvotes on those comments, total notebook views, and total notebook upvotes.
+UOCU proved to be more effective than previous methods. Furthermore, we trained
+machine learning models to predict notebook code understandability based solely
+on their metrics. We collected 34 metrics for 132,723 final notebooks as
+features in our dataset, using UOCU as the label. Our predictive model, using
+the Random Forest classifier, achieved 89% accuracy in predicting the
+understandability levels of computational notebooks.
+",cs.SE cs.AI,2024-06-18,"[['Ghahfarokhi', 'Mojtaba Mostafavi', ''], ['Asadi', 'Alireza', ''], ['Asgari', 'Arash', ''], ['Mohammadi', 'Bardia', ''], ['Rizi', 'Masih Beigi', ''], ['Heydarnoori', 'Abbas', '']]",cs.SE cs.AI
+2108.12647,An axiomatic characterization of mutual information,,"  We characterize mutual information as the unique map on ordered pairs of
+random variables satisfying a set of axioms similar to those of Faddeev's
+characterization of the Shannon entropy. There is a new axiom in our
+characterization however which has no analogue for Shannon entropy, based on
+the notion of a Markov triangle, which may be thought of as a composition of
+communication channels for which conditional entropy acts functorially. Our
+proofs are coordinate-free in the sense that no logarithms appear in our
+calculations.
+",cs.IT math.IT math.PR,2022-11-30,"[['Fullwood', 'James', '']]",cs.IT
+2106.04437,"Adversarial Training for Machine Reading Comprehension with Virtual
+  Embeddings","Proceedings of *SEM 2021: The Tenth Joint Conference on Lexical
+  and Computational Semantics","  Adversarial training (AT) as a regularization method has proved its
+effectiveness on various tasks. Though there are successful applications of AT
+on some NLP tasks, the distinguishing characteristics of NLP tasks have not
+been exploited. In this paper, we aim to apply AT on machine reading
+comprehension (MRC) tasks. Furthermore, we adapt AT for MRC tasks by proposing
+a novel adversarial training method called PQAT that perturbs the embedding
+matrix instead of word vectors. To differentiate the roles of passages and
+questions, PQAT uses additional virtual P/Q-embedding matrices to gather the
+global perturbations of words from passages and questions separately. We test
+the method on a wide range of MRC tasks, including span-based extractive RC and
+multiple-choice RC. The results show that adversarial training is effective
+universally, and PQAT further improves the performance.
+",cs.CL,2021-11-29,"[['Yang', 'Ziqing', ''], ['Cui', 'Yiming', ''], ['Si', 'Chenglei', ''], ['Che', 'Wanxiang', ''], ['Liu', 'Ting', ''], ['Wang', 'Shijin', ''], ['Hu', 'Guoping', '']]",cs.CL
+2307.04054,Deep Unsupervised Learning Using Spike-Timing-Dependent Plasticity,,"  Spike-Timing-Dependent Plasticity (STDP) is an unsupervised learning
+mechanism for Spiking Neural Networks (SNNs) that has received significant
+attention from the neuromorphic hardware community. However, scaling such local
+learning techniques to deeper networks and large-scale tasks has remained
+elusive. In this work, we investigate a Deep-STDP framework where a rate-based
+convolutional network, that can be deployed in a neuromorphic setting, is
+trained in tandem with pseudo-labels generated by the STDP clustering process
+on the network outputs. We achieve $24.56\%$ higher accuracy and $3.5\times$
+faster convergence speed at iso-accuracy on a 10-class subset of the Tiny
+ImageNet dataset in contrast to a $k$-means clustering approach.
+",cs.CV,2024-03-19,"[['Lu', 'Sen', ''], ['Sengupta', 'Abhronil', '']]",cs.CV
+2501.10403,Using hypervisors to create a cyber polygon,"Measuring and computing devices in technological processes, 2024,
+  Issue 3","  Cyber polygon used to train cybersecurity professionals, test new security
+technologies and simulate attacks play an important role in ensuring
+cybersecurity. The creation of such training grounds is based on the use of
+hypervisors, which allow efficient management of virtual machines, isolating
+operating systems and resources of a physical computer from virtual machines,
+ensuring a high level of security and stability. The paper analyses various
+aspects of using hypervisors in cyber polygons, including types of hypervisors,
+their main functions, and the specifics of their use in modelling cyber
+threats. The article shows the ability of hypervisors to increase the
+efficiency of hardware resources, create complex virtual environments for
+detailed modelling of network structures and simulation of real situations in
+cyberspace.
+",cs.CR cs.DC cs.NI,2025-01-22,"[['Tymoshchuk', 'Dmytro', ''], ['Yatskiv', 'Vasyl', '']]",cs.CR cs.DC cs.NI
+2403.04963,"An In-depth Evaluation of GPT-4 in Sentence Simplification with
+  Error-based Human Assessment",,"  Sentence simplification, which rewrites a sentence to be easier to read and
+understand, is a promising technique to help people with various reading
+difficulties. With the rise of advanced large language models (LLMs),
+evaluating their performance in sentence simplification has become imperative.
+Recent studies have used both automatic metrics and human evaluations to assess
+the simplification abilities of LLMs. However, the suitability of existing
+evaluation methodologies for LLMs remains in question. First, the suitability
+of current automatic metrics on LLMs' simplification evaluation is still
+uncertain. Second, current human evaluation approaches in sentence
+simplification often fall into two extremes: they are either too superficial,
+failing to offer a clear understanding of the models' performance, or overly
+detailed, making the annotation process complex and prone to inconsistency,
+which in turn affects the evaluation's reliability. To address these problems,
+this study provides in-depth insights into LLMs' performance while ensuring the
+reliability of the evaluation. We design an error-based human annotation
+framework to assess the GPT-4's simplification capabilities. Results show that
+GPT-4 generally generates fewer erroneous simplification outputs compared to
+the current state-of-the-art. However, LLMs have their limitations, as seen in
+GPT-4's struggles with lexical paraphrasing. Furthermore, we conduct
+meta-evaluations on widely used automatic metrics using our human annotations.
+We find that while these metrics are effective for significant quality
+differences, they lack sufficient sensitivity to assess the overall
+high-quality simplification by GPT-4.
+",cs.CL cs.AI,2024-03-11,"[['Wu', 'Xuanxin', ''], ['Arase', 'Yuki', '']]",cs.CL cs.AI
+2305.10270,Boosting Local Spectro-Temporal Features for Speech Analysis,,"  We introduce the problem of phone classification in the context of speech
+recognition, and explore several sets of local spectro-temporal features that
+can be used for phone classification. In particular, we present some
+preliminary results for phone classification using two sets of features that
+are commonly used for object detection: Haar features and SVM-classified
+Histograms of Gradients (HoG).
+",cs.CL cs.SD eess.AS,2023-08-08,"[['Guerzhoy', 'Michael', '']]",cs.CL cs.SD
+2501.16210,New Frontiers in Fighting Misinformation,,"  Despite extensive research and development of tools and technologies for
+misinformation tracking and detection, we often find ourselves largely on the
+losing side of the battle against misinformation. In an era where
+misinformation poses a substantial threat to public discourse, trust in
+information sources, and societal and political stability, it is imperative
+that we regularly revisit and reorient our work strategies. While we have made
+significant strides in understanding how and why misinformation spreads, we
+must now broaden our focus and explore how technology can help realise new
+approaches to address this complex challenge more efficiently.
+",cs.SI,2025-01-28,"[['Alani', 'Harith', ''], ['Burel', 'Grégoire', '']]",cs.SI
+1912.01238,Overcoming Catastrophic Forgetting by Generative Regularization,,"  In this paper, we propose a new method to overcome catastrophic forgetting by
+adding generative regularization to Bayesian inference framework. Bayesian
+method provides a general framework for continual learning. We could further
+construct a generative regularization term for all given classification models
+by leveraging energy-based models and Langevin-dynamic sampling to enrich the
+features learned in each task. By combining discriminative and generative loss
+together, we empirically show that the proposed method outperforms
+state-of-the-art methods on a variety of tasks, avoiding catastrophic
+forgetting in continual learning. In particular, the proposed method
+outperforms baseline methods over 15% on the Fashion-MNIST dataset and 10% on
+the CUB dataset
+",cs.LG stat.ML,2021-06-22,"[['Chen', 'Patrick H.', ''], ['Wei', 'Wei', ''], ['Hsieh', 'Cho-jui', ''], ['Dai', 'Bo', '']]",cs.LG
+2402.00891,Large Language Models in Cybersecurity: State-of-the-Art,,"  The rise of Large Language Models (LLMs) has revolutionized our comprehension
+of intelligence bringing us closer to Artificial Intelligence. Since their
+introduction, researchers have actively explored the applications of LLMs
+across diverse fields, significantly elevating capabilities. Cybersecurity,
+traditionally resistant to data-driven solutions and slow to embrace machine
+learning, stands out as a domain. This study examines the existing literature,
+providing a thorough characterization of both defensive and adversarial
+applications of LLMs within the realm of cybersecurity. Our review not only
+surveys and categorizes the current landscape but also identifies critical
+research gaps. By evaluating both offensive and defensive applications, we aim
+to provide a holistic understanding of the potential risks and opportunities
+associated with LLM-driven cybersecurity.
+",cs.CR cs.AI cs.CL cs.LG,2024-02-05,"[['Motlagh', 'Farzad Nourmohammadzadeh', ''], ['Hajizadeh', 'Mehrdad', ''], ['Majd', 'Mehryar', ''], ['Najafi', 'Pejman', ''], ['Cheng', 'Feng', ''], ['Meinel', 'Christoph', '']]",cs.CR cs.AI cs.CL cs.LG
+2210.15629,"Language Control Diffusion: Efficiently Scaling through Space, Time, and
+  Tasks",,"  Training generalist agents is difficult across several axes, requiring us to
+deal with high-dimensional inputs (space), long horizons (time), and
+generalization to novel tasks. Recent advances with architectures have allowed
+for improved scaling along one or two of these axes, but are still
+computationally prohibitive to use. In this paper, we propose to address all
+three axes by leveraging \textbf{L}anguage to \textbf{C}ontrol
+\textbf{D}iffusion models as a hierarchical planner conditioned on language
+(LCD). We effectively and efficiently scale diffusion models for planning in
+extended temporal, state, and task dimensions to tackle long horizon control
+problems conditioned on natural language instructions, as a step towards
+generalist agents. Comparing LCD with other state-of-the-art models on the
+CALVIN language robotics benchmark finds that LCD outperforms other SOTA
+methods in multi-task success rates, whilst improving inference speed over
+other comparable diffusion models by 3.3x~15x. We show that LCD can
+successfully leverage the unique strength of diffusion models to produce
+coherent long range plans while addressing their weakness in generating
+low-level details and control.
+",cs.LG cs.AI cs.CL,2024-12-10,"[['Zhang', 'Edwin', ''], ['Lu', 'Yujie', ''], ['Huang', 'Shinda', ''], ['Wang', 'William', ''], ['Zhang', 'Amy', '']]",cs.LG cs.AI cs.CL
+2202.07521,"5G Enabled Fault Detection and Diagnostics: How Do We Achieve
+  Efficiency?",,"  The 5th-generation wireless networks (5G) technologies and mobile edge
+computing (MEC) provide great promises of enabling new capabilities for the
+industrial Internet of Things. However, the solutions enabled by the 5G
+ultra-reliable low-latency communication (URLLC) paradigm come with challenges,
+where URLLC alone does not necessarily guarantee the efficient execution of
+time-critical fault detection and diagnostics (FDD) applications. Based on the
+Tennessee Eastman Process model, we propose the concept of the
+communication-edge-computing (CEC) loop and a system model for evaluating the
+efficiency of FDD applications. We then formulate an optimization problem for
+achieving the defined CEC efficiency and discuss some typical solutions to the
+generic CEC-based FDD services, and propose a new uplink-based communication
+protocol called ""ReFlexUp"". From the performance analysis and numerical
+results, the proposed ReFlexUp protocol shows its effectiveness compared to the
+typical protocols such as Selective Repeat ARQ, HARQ, and ""Occupy CoW"" in terms
+of the key metrics such as latency, reliability, and efficiency. These results
+are further convinced from the mmWave-based simulations in a typical 5G
+MEC-based implementation.
+",cs.NI cs.SY eess.SY,2022-02-16,"[['Hu', 'Peng', ''], ['Zhang', 'Jinhuan', '']]",cs.NI cs.SY
+2407.19299,"The Impact of LoRA Adapters for LLMs on Clinical NLP Classification
+  Under Data Limitations",,"  Fine-tuning Large Language Models (LLMs) for clinical Natural Language
+Processing (NLP) poses significant challenges due to the domain gap and limited
+data availability. This study investigates the effectiveness of various adapter
+techniques, equivalent to Low-Rank Adaptation (LoRA), for fine-tuning LLMs in a
+resource-constrained hospital environment. We experimented with four
+structures-Adapter, Lightweight, TinyAttention, and Gated Residual Network
+(GRN)-as final layers for clinical notes classification. We fine-tuned
+biomedical pre-trained models, including CamemBERT-bio, AliBERT, and DrBERT,
+alongside two Transformer-based models. Our extensive experimental results
+indicate that i) employing adapter structures does not yield significant
+improvements in fine-tuning biomedical pre-trained LLMs, and ii) simpler
+Transformer-based models, trained from scratch, perform better under resource
+constraints. Among the adapter structures, GRN demonstrated superior
+performance with accuracy, precision, recall, and an F1 score of 0.88.
+Moreover, the total training time for LLMs exceeded 1000 hours, compared to
+under 6 hours for simpler transformer-based models, highlighting that LLMs are
+more suitable for environments with extensive computational resources and
+larger datasets. Consequently, this study demonstrates that simpler
+Transformer-based models can be effectively trained from scratch, providing a
+viable solution for clinical NLP tasks in low-resource environments with
+limited data availability. By identifying the GRN as the most effective adapter
+structure, we offer a practical approach to enhance clinical note
+classification without requiring extensive computational resources.
+",cs.CL eess.SP,2024-07-30,"[['Le', 'Thanh-Dung', ''], ['Nguyen', 'Ti Ti', ''], ['Ha', 'Vu Nguyen', '']]",cs.CL
+2401.08865,"The Effect of Intrinsic Dataset Properties on Generalization: Unraveling
+  Learning Differences Between Natural and Medical Images",,"  This paper investigates discrepancies in how neural networks learn from
+different imaging domains, which are commonly overlooked when adopting computer
+vision techniques from the domain of natural images to other specialized
+domains such as medical images. Recent works have found that the generalization
+error of a trained network typically increases with the intrinsic dimension
+($d_{data}$) of its training set. Yet, the steepness of this relationship
+varies significantly between medical (radiological) and natural imaging
+domains, with no existing theoretical explanation. We address this gap in
+knowledge by establishing and empirically validating a generalization scaling
+law with respect to $d_{data}$, and propose that the substantial scaling
+discrepancy between the two considered domains may be at least partially
+attributed to the higher intrinsic ``label sharpness'' ($K_\mathcal{F}$) of
+medical imaging datasets, a metric which we propose. Next, we demonstrate an
+additional benefit of measuring the label sharpness of a training set: it is
+negatively correlated with the trained model's adversarial robustness, which
+notably leads to models for medical images having a substantially higher
+vulnerability to adversarial attack. Finally, we extend our $d_{data}$
+formalism to the related metric of learned representation intrinsic dimension
+($d_{repr}$), derive a generalization scaling law with respect to $d_{repr}$,
+and show that $d_{data}$ serves as an upper bound for $d_{repr}$. Our
+theoretical results are supported by thorough experiments with six models and
+eleven natural and medical imaging datasets over a range of training set sizes.
+Our findings offer insights into the influence of intrinsic dataset properties
+on generalization, representation learning, and robustness in deep neural
+networks. Code link: https://github.com/mazurowski-lab/intrinsic-properties
+",cs.CV cs.LG eess.IV stat.ML,2024-02-22,"[['Konz', 'Nicholas', ''], ['Mazurowski', 'Maciej A.', '']]",cs.CV cs.LG
+2207.11209,"Divide and Conquer: 3D Point Cloud Instance Segmentation With Point-Wise
+  Binarization",,"  Instance segmentation on point clouds is crucially important for 3D scene
+understanding. Most SOTAs adopt distance clustering, which is typically
+effective but does not perform well in segmenting adjacent objects with the
+same semantic label (especially when they share neighboring points). Due to the
+uneven distribution of offset points, these existing methods can hardly cluster
+all instance points. To this end, we design a novel divide-and-conquer strategy
+named PBNet that binarizes each point and clusters them separately to segment
+instances. Our binary clustering divides offset instance points into two
+categories: high and low density points (HPs vs. LPs). Adjacent objects can be
+clearly separated by removing LPs, and then be completed and refined by
+assigning LPs via a neighbor voting method. To suppress potential
+over-segmentation, we propose to construct local scenes with the weight mask
+for each instance. As a plug-in, the proposed binary clustering can replace
+traditional distance clustering and lead to consistent performance gains on
+many mainstream baselines. A series of experiments on ScanNetV2 and S3DIS
+datasets indicate the superiority of our model. In particular, PBNet ranks
+first on the ScanNetV2 official benchmark challenge, achieving the highest mAP.
+Code will be available publicly at https://github.com/weiguangzhao/PBNet.
+",cs.CV,2023-11-27,"[['Zhao', 'Weiguang', ''], ['Yan', 'Yuyao', ''], ['Yang', 'Chaolong', ''], ['Ye', 'Jianan', ''], ['Yang', 'Xi', ''], ['Huang', 'Kaizhu', '']]",cs.CV
+2401.16393,"Amazon's 2023 Drought: Sentinel-1 Reveals Extreme Rio Negro River
+  Contraction",,"  The Amazon, the world's largest rainforest, faces a severe historic drought.
+The Rio Negro River, one of the major Amazon River tributaries, reaches its
+lowest level in a century in October 2023. Here, we used a U-net deep learning
+model to map water surfaces in the Rio Negro River basin every 12 days in 2022
+and 2023 using 10 m spatial resolution Sentinel-1 satellite radar images. The
+accuracy of the water surface model was high with an F1-score of 0.93. The 12
+days mosaic time series of water surface was generated from the Sentinel-1
+prediction. The water surface mask demonstrated relatively consistent agreement
+with the Global Surface Water (GSW) product from Joint Research Centre
+(F1-score: 0.708) and with the Brazilian Mapbiomas Water initiative (F1-score:
+0.686). The main errors of the map were omission errors in flooded woodland, in
+flooded shrub and because of clouds. Rio Negro water surfaces reached their
+lowest level around the 25th of November 2023 and were reduced to 68.1\%
+(9,559.9 km$^2$) of the maximum water surfaces observed in the period 2022-2023
+(14,036.3 km$^2$). Synthetic Aperture Radar (SAR) data, in conjunction with
+deep learning techniques, can significantly improve near real-time mapping of
+water surface in tropical regions.
+",cs.CV,2024-01-30,"[['Wagner', 'Fabien H', ''], ['Favrichon', 'Samuel', ''], ['Dalagnol', 'Ricardo', ''], ['Hirye', 'Mayumi CM', ''], ['Mullissa', 'Adugna', ''], ['Saatchi', 'Sassan', '']]",cs.CV
+2111.05464,Are Transformers More Robust Than CNNs?,,"  Transformer emerges as a powerful tool for visual recognition. In addition to
+demonstrating competitive performance on a broad range of visual benchmarks,
+recent works also argue that Transformers are much more robust than
+Convolutions Neural Networks (CNNs). Nonetheless, surprisingly, we find these
+conclusions are drawn from unfair experimental settings, where Transformers and
+CNNs are compared at different scales and are applied with distinct training
+frameworks. In this paper, we aim to provide the first fair & in-depth
+comparisons between Transformers and CNNs, focusing on robustness evaluations.
+  With our unified training setup, we first challenge the previous belief that
+Transformers outshine CNNs when measuring adversarial robustness. More
+surprisingly, we find CNNs can easily be as robust as Transformers on defending
+against adversarial attacks, if they properly adopt Transformers' training
+recipes. While regarding generalization on out-of-distribution samples, we show
+pre-training on (external) large-scale datasets is not a fundamental request
+for enabling Transformers to achieve better performance than CNNs. Moreover,
+our ablations suggest such stronger generalization is largely benefited by the
+Transformer's self-attention-like architectures per se, rather than by other
+training setups. We hope this work can help the community better understand and
+benchmark the robustness of Transformers and CNNs. The code and models are
+publicly available at https://github.com/ytongbai/ViTs-vs-CNNs.
+",cs.CV,2021-11-11,"[['Bai', 'Yutong', ''], ['Mei', 'Jieru', ''], ['Yuille', 'Alan', ''], ['Xie', 'Cihang', '']]",cs.CV
+2411.17221,"AIGV-Assessor: Benchmarking and Evaluating the Perceptual Quality of
+  Text-to-Video Generation with LMM",,"  The rapid advancement of large multimodal models (LMMs) has led to the rapid
+expansion of artificial intelligence generated videos (AIGVs), which highlights
+the pressing need for effective video quality assessment (VQA) models designed
+specifically for AIGVs. Current VQA models generally fall short in accurately
+assessing the perceptual quality of AIGVs due to the presence of unique
+distortions, such as unrealistic objects, unnatural movements, or inconsistent
+visual elements. To address this challenge, we first present AIGVQA-DB, a
+large-scale dataset comprising 36,576 AIGVs generated by 15 advanced
+text-to-video models using 1,048 diverse prompts. With these AIGVs, a
+systematic annotation pipeline including scoring and ranking processes is
+devised, which collects 370k expert ratings to date. Based on AIGVQA-DB, we
+further introduce AIGV-Assessor, a novel VQA model that leverages
+spatiotemporal features and LMM frameworks to capture the intricate quality
+attributes of AIGVs, thereby accurately predicting precise video quality scores
+and video pair preferences. Through comprehensive experiments on both AIGVQA-DB
+and existing AIGV databases, AIGV-Assessor demonstrates state-of-the-art
+performance, significantly surpassing existing scoring or evaluation methods in
+terms of multiple perceptual quality dimensions.
+",cs.CV,2024-11-27,"[['Wang', 'Jiarui', ''], ['Duan', 'Huiyu', ''], ['Zhai', 'Guangtao', ''], ['Wang', 'Juntong', ''], ['Min', 'Xiongkuo', '']]",cs.CV
+2403.04113,"ZTRAN: Prototyping Zero Trust Security xApps for Open Radio Access
+  Network Deployments",,"  The open radio access network (O-RAN) offers new degrees of freedom for
+building and operating advanced cellular networks. Emphasizing on RAN
+disaggregation, open interfaces, multi-vendor support, and RAN intelligent
+controllers (RICs), O-RAN facilitates adaptation to new applications and
+technology trends. Yet, this architecture introduces new security challenges.
+This paper proposes leveraging zero trust principles for O-RAN security. We
+introduce zero trust RAN (ZTRAN), which embeds service authentication,
+intrusion detection, and secure slicing subsystems that are encapsulated as
+xApps. We implement ZTRAN on the open artificial intelligence cellular (OAIC)
+research platform and demonstrate its feasibility and effectiveness in terms of
+legitimate user throughput and latency figures. Our experimental analysis
+illustrates how ZTRAN's intrusion detection and secure slicing microservices
+operate effectively and in concert as part of O-RAN Alliance's containerized
+near-real time RIC. Research directions include exploring machine learning and
+additional threat intelligence feeds for improving the performance and
+extending the scope of ZTRAN.
+",cs.CR cs.ET cs.SY eess.SY,2024-03-08,"[['Abdalla', 'Aly S.', ''], ['Moore', 'Joshua', ''], ['Adhikari', 'Nisha', ''], ['Marojevic', 'Vuk', '']]",cs.CR cs.ET cs.SY
+2502.01857,Learning Human Perception Dynamics for Informative Robot Communication,,"  Human-robot cooperative navigation is challenging in environments with
+incomplete information. We introduce CoNav-Maze, a simulated robotics
+environment where a robot navigates using local perception while a human
+operator provides guidance based on an inaccurate map. The robot can share its
+camera views to improve the operator's understanding of the environment. To
+enable efficient human-robot cooperation, we propose Information Gain Monte
+Carlo Tree Search (IG-MCTS), an online planning algorithm that balances
+autonomous movement and informative communication. Central to IG-MCTS is a
+neural human perception dynamics model that estimates how humans distill
+information from robot communications. We collect a dataset through a
+crowdsourced mapping task in CoNav-Maze and train this model using a fully
+convolutional architecture with data augmentation. User studies show that
+IG-MCTS outperforms teleoperation and instruction-following baselines,
+achieving comparable task performance with significantly less communication and
+lower human cognitive load, as evidenced by eye-tracking metrics.
+",cs.RO cs.AI,2025-02-05,"[['Chen', 'Shenghui', ''], ['Zhao', 'Ruihan', ''], ['Chinchali', 'Sandeep', ''], ['Topcu', 'Ufuk', '']]",cs.RO cs.AI
+2404.12694,ESC: Evolutionary Stitched Camera Calibration in the Wild,,"  This work introduces a novel end-to-end approach for estimating extrinsic
+parameters of cameras in multi-camera setups on real-life sports fields. We
+identify the source of significant calibration errors in multi-camera
+environments and address the limitations of existing calibration methods,
+particularly the disparity between theoretical models and actual sports field
+characteristics. We propose the Evolutionary Stitched Camera calibration (ESC)
+algorithm to bridge this gap. It consists of image segmentation followed by
+evolutionary optimization of a novel loss function, providing a unified and
+accurate multi-camera calibration solution with high visual fidelity. The
+outcome allows the creation of virtual stitched views from multiple video
+sources, being as important for practical applications as numerical accuracy.
+We demonstrate the superior performance of our approach compared to
+state-of-the-art methods across diverse real-life football fields with varying
+physical characteristics.
+",cs.CV cs.NE,2024-04-22,"[['Rypeść', 'Grzegorz', ''], ['Kurzejamski', 'Grzegorz', '']]",cs.CV cs.NE
