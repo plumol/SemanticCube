@@ -1,4 +1,7 @@
 import pymongo
+import openllm
+import openai
+from openai import OpenAI
 import sys
 import csv
 from collections import defaultdict
@@ -8,14 +11,14 @@ import os
 
 load_dotenv()
 uri = os.getenv("MONGODB_URI")
-csv_file_path = "clean_fields_filter_date_sample50.csv"
+csv_file_path = "./dataset/clean_fields_filter_date_sample50.csv"
 
 # connect to mongo
 try:
     client = pymongo.MongoClient(uri)
     client.admin.command('ping')
     print("Pinged your deployment. You successfully connected to MongoDB!")
-except pymongo.errors.ConfigurationError:
+except pymongo.errors.ConfigurationError as e:
     print(e)
     sys.exit(1)
 
@@ -67,10 +70,42 @@ def naive_aggregated_summary(papers):
     all_abstracts = [p["abstract"] for p in papers]
     return " ".join(all_abstracts)
 
+openai_api_key = os.getenv("OPENAI_API_KEY")
 
+def llm_aggregated_summary(papers):
+    abstracts_combined = "\n\n---\n\n".join([p["abstract"] for p in papers])
+    prompt = f"""Please provide a concise, expert-level summary that captures the main themes and key contributions 
+    from the following collection of research paper abstracts. Please identify the following:
+    - Main research themes
+    - Common methodologies
+    - Significant findings
+    - Emerging trends
+
+    From the following abstracts: {abstracts_combined}
+
+    Summary:"""
+
+    try:
+        client = OpenAI(api_key=openai_api_key)
+
+        completion = client.chat.completions.create(
+            model="gpt-4o",
+            messages=[
+                {"role": "developer", "content": "You are an expert research assistant."},
+                {"role": "user", "content": prompt}
+            ], 
+            max_tokens=500,
+            temperature=0.3
+        )
+
+        return completion.choices[0].message.content
+        
+    except Exception as e:
+        print(f"Error during summarization: {e}")
+        return naive_aggregated_summary(papers)
+    
 # Choose summary function
-summary_function = naive_aggregated_summary  # or llm_aggregated_summary
-
+summary_function = llm_aggregated_summary  # or llm_aggregated_summary
 
 # cube_collection.insert_one({"year":2000, "name":"Sabrina"})
 for (year, month, category), papers in aggregator.items():
