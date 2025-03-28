@@ -116,21 +116,22 @@ def naive_aggregated_summary(papers):
 
 # Insert aggregated cube documents
 for (year, month, category), papers in aggregator.items():
-    count = len(papers)
-    summary = naive_aggregated_summary(papers)
     paper_ids = [p["id"] for p in papers]
+    paper_titles = [p["title"] for p in papers]
     techniques = list({t for p in papers for t in p["techniques"]})
     parent_category = category_map.get(category, "Other")
+    summary = naive_aggregated_summary(papers)
 
     cube_doc = {
         "year": year,
         "month": month,
         "category": category,
         "parent_category": parent_category,
-        "paper_count": count,
+        "paper_count": len(papers),
         "paper_ids": paper_ids,
-        "aggregated_summary": summary,
+        "paper_titles": paper_titles,
         "techniques": techniques,
+        "aggregated_summary": summary,
     }
 
     try:

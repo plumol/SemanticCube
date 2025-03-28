@@ -35,13 +35,13 @@ def run_pipeline(match_stage):
     pipeline.append({
         "$group": {
             "_id": None,
-            "titles": {"$push": "$title"},
             "total_papers": {"$sum": "$paper_count"},
             "techniques": {"$addToSet": "$techniques"},
             "categories": {"$addToSet": "$category"},
             "summaries": {"$push": "$aggregated_summary"},
-        }
-    })
+            "titles": {"$push": "$paper_titles"}  # this pulls the array as-is
+    }
+})
 
     return list(cube_collection.aggregate(pipeline))
 
