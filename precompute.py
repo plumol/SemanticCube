@@ -60,7 +60,7 @@ def extract_techniques(text):
 
 # Connect to MongoDB
 try:
-    client = pymongo.MongoClient(uri)
+    client = pymongo.MongoClient("localhost", port=27017)
     print("Pinged your deployment. You successfully connected to MongoDB!")
     client.admin.command('ping')
 except pymongo.errors.ConfigurationError as e:
