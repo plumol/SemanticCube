@@ -2,6 +2,7 @@ import pymongo
 import openllm
 import openai
 from openai import OpenAI
+from meta_ai_api import MetaAI
 import sys
 import csv
 from collections import defaultdict
@@ -117,13 +118,41 @@ with open(csv_file_path, "r", encoding="utf-8") as f:
 def naive_aggregated_summary(papers):
     return " ".join(p["abstract"] for p in papers)
 
+
+def llm_aggregated_summary(papers):
+    abstracts_combined = "\n\n---\n\n".join([p["abstract"] for p in papers])
+    prompt = f"""Please provide a concise, expert-level summary that captures the main themes and key contributions 
+    from the following collection of research paper abstracts. Please identify the following:
+    - Main research themes
+    - Common methodologies
+    - Significant findings
+    - Emerging trends
+
+    From the following abstracts: {abstracts_combined}
+
+    Summary:"""
+
+    try:
+        client = MetaAI()
+        print('created MetaAI client')
+        response = client.prompt(prompt)
+        print(f"summary: {response['message']}")
+
+        return response['message']
+        
+    except Exception as e:
+        print(f"Error during summarization: {e}")
+        return naive_aggregated_summary(papers)
+
+
 # Insert aggregated cube documents
 for (year, month, category), papers in aggregator.items():
     paper_ids = [p["id"] for p in papers]
     paper_titles = [p["title"] for p in papers]
     techniques = list({t for p in papers for t in p["techniques"]})
     parent_category = category_map.get(category, "Other")
-    summary = naive_aggregated_summary(papers)
+    # summary = naive_aggregated_summary(papers)
+    summary = llm_aggregated_summary(papers)
 
     cube_doc = {
         "year": year,
@@ -246,3 +275,4 @@ for (year, month, category), papers in aggregator.items():
 #     else:
 #         pass
 #         # print("doc inserted")
+
