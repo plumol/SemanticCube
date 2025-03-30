@@ -114,7 +114,44 @@ with open(csv_file_path, "r", encoding="utf-8") as f:
 def naive_aggregated_summary(papers):
     return " ".join(p["abstract"] for p in papers)
 
-# Insert aggregated cube documents
+openai_api_key = os.getenv("OPENAI_API_KEY")
+
+def llm_aggregated_summary(papers):
+    abstracts_combined = "\n\n---\n\n".join([p["abstract"] for p in papers])
+    prompt = f"""Please provide a concise, expert-level summary that captures the main themes and key contributions 
+    from the following collection of research paper abstracts. Please identify the following:
+    - Main research themes
+    - Common methodologies
+    - Significant findings
+    - Emerging trends
+
+    From the following abstracts: {abstracts_combined}
+
+    Summary:"""
+
+    try:
+        client = OpenAI(api_key=openai_api_key)
+
+        completion = client.chat.completions.create(
+            model="gpt-4o",
+            messages=[
+                {"role": "developer", "content": "You are an expert research assistant."},
+                {"role": "user", "content": prompt}
+            ], 
+            max_tokens=500,
+            temperature=0.3
+        )
+
+        return completion.choices[0].message.content
+        
+    except Exception as e:
+        print(f"Error during summarization: {e}")
+        return naive_aggregated_summary(papers)
+    
+# Choose summary function
+summary_function = llm_aggregated_summary  # or llm_aggregated_summary
+
+# cube_collection.insert_one({"year":2000, "name":"Sabrina"})
 for (year, month, category), papers in aggregator.items():
     paper_ids = [p["id"] for p in papers]
     paper_titles = [p["title"] for p in papers]
