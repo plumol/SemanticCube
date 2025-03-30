@@ -121,14 +121,19 @@ def naive_aggregated_summary(papers):
 
 def llm_aggregated_summary(papers):
     abstracts_combined = "\n\n---\n\n".join([p["abstract"] for p in papers])
-    prompt = f"""Please provide a concise, expert-level summary that captures the main themes and key contributions 
-    from the following collection of research paper abstracts. Please identify the following:
-    - Main research themes
-    - Common methodologies
-    - Significant findings
-    - Emerging trends
+    # prompt = f"""Please provide a concise, expert-level summary that captures the main themes and key contributions 
+    # from the following collection of research paper abstracts. Please identify the following:
+    # - Main research themes
+    # - Common methodologies
+    # - Significant findings
+    # - Emerging trends
 
-    From the following abstracts: {abstracts_combined}
+    # From the following abstracts: {abstracts_combined}
+
+    # Summary:"""
+
+    prompt = f"""You are an expert computer science research assistant. Please provide a concise, expert-level summary that captures the main themes and key contributions 
+    from the following collection of research paper abstracts. Please identify any main research themes, common methodologies, significant findings, and emerging trends from the following abstracts: {abstracts_combined}
 
     Summary:"""
 
