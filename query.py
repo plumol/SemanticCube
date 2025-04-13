@@ -117,7 +117,6 @@
 #         print("No results found.")
 
 
-
 import pymongo
 import sys
 from dotenv import load_dotenv
@@ -128,19 +127,21 @@ load_dotenv()
 uri = os.getenv("MONGODB_URI")
 
 try:
-    client = pymongo.MongoClient("localhost", 27017)
-    client.admin.command('ping')
+    client = pymongo.MongoClient(uri)
+    client.admin.command("ping")
     print("Pinged your deployment. You successfully connected to MongoDB!")
-    
+
 except pymongo.errors.ConfigurationError as e:
     print(e)
-    print("An Invalid URI host error was received. Is your Atlas host name correct in your connection string?")
+    print(
+        "An Invalid URI host error was received. Is your Atlas host name correct in your connection string?"
+    )
     sys.exit(1)
 
 db = client.paperDatabase
 cube_collection = db["semantic_cube"]
 
-'''
+"""
 # Example: Find all 2022 papers in "cs.PL"
 result = cube_collection.find_one({"year": 2022, "category": "cs.PL"})
 # result = cube_collection.find_one({"year": 2025, "category": "cs.CV"})
@@ -149,9 +150,12 @@ if result:
     print("Summary:", result["aggregated_summary"])
 else:
     print("No data found for (2022, cs.PL)")
-'''
+"""
 
-def run_pipeline(category=None, start_year=None, end_year=None, start_month=None, end_month=None):
+
+def run_pipeline(
+    category=None, start_year=None, end_year=None, start_month=None, end_month=None
+):
     # Build the $match stage dynamically based on provided parameters.
     match_stage = {}
     if category:
@@ -196,23 +200,27 @@ def run_pipeline(category=None, start_year=None, end_year=None, start_month=None
     pipeline = []
     if match_stage:
         pipeline.append({"$match": match_stage})
-    
-    # Grouping stage: adjust _id if needed
-    pipeline.append({
-        "$group": {
-            "_id": None,
-            "categories": {"$push": "$category"},
-            "total_papers": {"$sum": "$paper_count"},
-            "paper_ids": {"$push": "$paper_ids"},
-            "paper_titles": {"$push": "$paper_titles"},
-            "summaries": {"$push": "$aggregated_summary"}
-        }
-    })
-    
-    # print("pipeline: ", pipeline)
-    return list(cube_collection.aggregate(pipeline))
 
-'''
+    # Grouping stage: adjust _id if needed
+    pipeline.append(
+        {
+            "$group": {
+                "_id": None,
+                "categories": {"$push": "$category"},
+                "total_papers": {"$sum": "$paper_count"},
+                "paper_ids": {"$push": "$paper_ids"},
+                "paper_titles": {"$push": "$paper_titles"},
+                "summaries": {"$push": "$aggregated_summary"},
+            }
+        }
+    )
+
+    results = list(cube_collection.aggregate(pipeline))
+    # Return the document if available, or an empty dictionary otherwise.
+    return results[0] if results else {}
+
+
+"""
 category_pipeline = [
     {"$match": {"category": "cs.CV"}},
     {
@@ -229,19 +237,25 @@ if rollup_result:
     all_summaries = rollup_result[0]["summaries"]
     print(total_papers)
     print(all_summaries)
-'''
+"""
+
+
 def main():
     while True:
         category = input("Enter category (e.g., cs.CV) or 'q' to quit: ")
-        if category.lower() == 'q':
+        if category.lower() == "q":
             break
 
-        start_date = input("Enter start date (YYYY-MM) or press Enter to skip, 'q' to quit: ")
-        if start_date.lower() == 'q':
+        start_date = input(
+            "Enter start date (YYYY-MM) or press Enter to skip, 'q' to quit: "
+        )
+        if start_date.lower() == "q":
             break
 
-        end_date = input("Enter end date (YYYY-MM) or press Enter to skip, 'q' to quit: ")
-        if end_date.lower() == 'q':
+        end_date = input(
+            "Enter end date (YYYY-MM) or press Enter to skip, 'q' to quit: "
+        )
+        if end_date.lower() == "q":
             break
 
         # Parse start date into year and month if provided
@@ -270,18 +284,10 @@ def main():
             start_year if start_year else None,
             end_year if end_year else None,
             start_month if start_month else None,
-            end_month if end_month else None
+            end_month if end_month else None,
         )
+        return result
 
-        if result:
-            categories = result[0].get("categories", [])
-            total_papers = result[0].get("total_papers", 0)
-            all_summaries = result[0].get("summaries", [])
-            print("Categories:", categories)
-            print("Total Papers:", total_papers)
-            print("Summaries:", all_summaries, '\n\n')
-        else:
-            print("No results found.")
 
 if __name__ == "__main__":
     main()

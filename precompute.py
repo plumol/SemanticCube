@@ -21,52 +21,54 @@ category_map = {
     "cs.CV": "AI",
     "cs.NE": "AI",
     "cs.RO": "AI",
-
     # Security & Privacy
     "cs.CR": "Security",
-
     # Systems
     "cs.DC": "Systems",
     "cs.NI": "Systems",
     "cs.SE": "Systems",
     "cs.SY": "Systems",
     "cs.DS": "Systems",
-
     # Human Factors
     "cs.HC": "Human-Computer Interaction",
     "cs.CY": "Human-Computer Interaction",
-
     # Theory & Foundations
     "cs.IT": "Theory",
     "cs.NA": "Theory",
     "cs.ET": "Theory",
-
     # Signal & Vision
     "cs.SI": "Signal Processing",
     "cs.SD": "Signal Processing",
-
     # Hardware / Embedded
     "cs.CE": "Hardware",
     "cs.CC": "Hardware",
-
     # Digital Libraries
     "cs.DL": "Digital Libraries",
 }
+
 
 # Extract techniques using basic keyword matching (for drill-down & slide/dice) replace this with llm extraction later
 def extract_techniques(text):
     keywords = ["transformer", "bert", "gpt", "attention", "resnet", "diffusion"]
     text = text.lower()
-    return [k.upper() if k.startswith("gpt") or k == "bert" else k.capitalize() for k in keywords if k in text]
+    return [
+        k.upper() if k.startswith("gpt") or k == "bert" else k.capitalize()
+        for k in keywords
+        if k in text
+    ]
+
 
 # Connect to MongoDB
 try:
-    client = pymongo.MongoClient("localhost", port=27017)
+    print("uri: ", uri)
+
+    client = pymongo.MongoClient(uri)
+    client.admin.command("ping")
     print("Pinged your deployment. You successfully connected to MongoDB!")
-    client.admin.command('ping')
 except pymongo.errors.ConfigurationError as e:
     print(e)
     sys.exit(1)
+
 
 # Select database and collections
 db = client.paperDatabase
@@ -111,15 +113,18 @@ with open(csv_file_path, "r", encoding="utf-8") as f:
         for cat in categories:
             aggregator[(year, month, cat)].append(paper_doc)
 
+
 # Naive abstract summary
 def naive_aggregated_summary(papers):
     return " ".join(p["abstract"] for p in papers)
 
+
 openai_api_key = os.getenv("OPENAI_API_KEY")
+
 
 def llm_aggregated_summary(papers):
     abstracts_combined = "\n\n---\n\n".join([p["abstract"] for p in papers])
-    # prompt = f"""Please provide a concise, expert-level summary that captures the main themes and key contributions 
+    # prompt = f"""Please provide a concise, expert-level summary that captures the main themes and key contributions
     # from the following collection of research paper abstracts. Please identify the following:
     # - Main research themes
     # - Common methodologies
@@ -137,12 +142,12 @@ def llm_aggregated_summary(papers):
 
     try:
         client = MetaAI()
-        print('created MetaAI client')
+        print("created MetaAI client")
         response = client.prompt(prompt)
         print(f"summary: {response['message']}")
 
-        return response['message']
-        
+        return response["message"]
+
     except Exception as e:
         print(f"Error during summarization: {e}")
         return naive_aggregated_summary(papers)
@@ -279,5 +284,3 @@ for (year, month, category), papers in aggregator.items():
 #     else:
 #         pass
 #         # print("doc inserted")
-
-
