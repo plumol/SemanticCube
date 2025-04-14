@@ -50,12 +50,12 @@ def main():
 
 You are an expert at parsing natural language queries for database applications.
 For any given query, you must output exactly one line in CSV format containing six comma-separated values in this order:
-    category,start_year,end_year,start_month,end_month
+    category,start_year,start_month,end_year,end_month
 Do not include any additional text, explanations, or formatting; output only the CSV values.
 - The category should be formatted as two items: the first token (e.g., "cs") and the topic (e.g., "AI") separated by a comma.
 - If a query does not specify a full date range, assume the entire year (i.e. start_month = 1 and end_month = 12).
 For example, if the query is "ai paper in 2024", you must output exactly:
-    cs,AI,2024,2024,1,12
+    cs,AI,2024,1,2024,12
 """
 
     while True:
@@ -75,7 +75,7 @@ For example, if the query is "ai paper in 2024", you must output exactly:
 
         try:
             # Parse the CSV output; expecting a result like:
-            # cs,AI,2024,2024,1,12
+            # cs,AI,2024,1,2024,12
             params_list = parsed["message"].strip().split(",")
             if len(params_list) != 6:
                 raise ValueError(
@@ -86,8 +86,8 @@ For example, if the query is "ai paper in 2024", you must output exactly:
             pipeline_params = {
                 "category": f"{params_list[0]}.{params_list[1]}",
                 "start_year": int(params_list[2]),
-                "end_year": int(params_list[3]),
-                "start_month": int(params_list[4]),
+                "start_month": int(params_list[3]),
+                "end_year": int(params_list[4]),
                 "end_month": int(params_list[5]),
             }
         except Exception as e:
@@ -101,6 +101,7 @@ For example, if the query is "ai paper in 2024", you must output exactly:
             print("paper_ids:", res.get("paper_ids"))
             print("paper_titles:", res.get("paper_titles"))
             print("summaries:", res.get("summaries"))
+            print("rolled_up_summary:", res.get("rolled_up_summary"))
         else:
             print("No results found.")
 
