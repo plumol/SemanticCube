@@ -3,6 +3,7 @@ from fastapi import FastAPI, HTTPException
 from models.request_schema import QueryRequest
 from services.query_service import get_summary_from_natural_language
 from fastapi.middleware.cors import CORSMiddleware
+from utils.enhanced_summary import enhance_summary  # Add this import
 
 app = FastAPI()
 app.add_middleware(
@@ -20,6 +21,8 @@ def get_summary(req: QueryRequest):
         summary = get_summary_from_natural_language(req.query)
         if summary == "None":
             raise ValueError("Summary not found.")
-        return {"summary": summary}
+        # summary = "This is a test summary."
+        enhanced_summary = enhance_summary(summary)
+        return {"summary": enhanced_summary}
     except Exception as e:
         raise HTTPException(status_code=400, detail=f"Error: {e}")
