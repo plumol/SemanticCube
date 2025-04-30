@@ -3,6 +3,11 @@ from meta_ai_api import MetaAI
 
 
 def parse_query_to_params(query: str) -> dict:
+    system_directive = (
+        "You are a strict parser. You only respond with a line of CSV values " \
+        "in the following format: category,start_year,start_month,end_year,end_month. " \
+        "Never respond with anything else. Do not ever explain. Do not summarize."
+    )
     persistent_context = """Use the following mappings for all queries:
 
 # AI & ML
@@ -55,9 +60,10 @@ For example, if the query is "ai paper in 2024", you must output exactly:
 
     ai = MetaAI()
     full_prompt = (
-        persistent_context
-        + "\nNow, process the following query and output only the CSV line: "
-        + query
+        # persistent_context
+        # + "\nNow, process the following query and output only the CSV line: "
+        # + query
+        f"{system_directive}\n\n{persistent_context}\n Now, process the following query and output only the CSV line:\n{query}"
     )
     parsed = ai.prompt(full_prompt)
     csv_line = parsed["message"].strip()
