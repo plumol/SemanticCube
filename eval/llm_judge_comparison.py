@@ -4,6 +4,7 @@ from dotenv import load_dotenv
 from time import sleep
 from openai import OpenAI
 from openai.types.chat import ChatCompletionMessageParam
+from meta_ai_api import MetaAI
 
 
 CRITERIA = {
@@ -104,7 +105,7 @@ for i, row in df.iterrows():
         })
 
     except Exception as e:
-        print(f"⚠️ Error on row {i}: {e}")
+        print(f"Error on row {i}: {e}")
         results.append({
             "query": query,
             "response_a": response_a,
