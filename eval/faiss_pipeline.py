@@ -1,4 +1,4 @@
-# faiss_engine.py
+# Pipeline implementation for FAISS-based semantic search and summarization as a basis of comparison. For future work. 
 
 import os
 import time
